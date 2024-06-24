@@ -133,8 +133,21 @@ main {
 .username{
   color: #16C79A;
 }
-.me-as{
+#passion{
   color: #16C79A;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-caret 0.5s step-end infinite;
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 #cv {
@@ -291,7 +304,7 @@ main {
 }
 
 .projects-grid{
-  width: 100%;
+  width: 90vw;
   height: auto;
   display: flex;
   grid-row: 2;
@@ -367,15 +380,18 @@ main {
   width: 100%;
   height: fit-content;
   display: flex;
+  position: relative;
+  z-index: 9;
   flex-direction: column;
   align-items: center;
   padding-bottom: 9rem;
 }
 
 .skill-card{
-  height: 450px;
+  height: 100%;
   margin: 50px 80px 0 80px;
   display: flex;
+  position: relative;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -392,11 +408,16 @@ main {
   padding: 30px;
   border-radius: 10px;
   row-gap: 20px;
-  box-shadow: 0px 2px 30px 5px #e0e0e0;
+  box-shadow: 0px 2px 30px 5px #a3a3a3;
   transition: all 0.5s ease-in-out;
 }
 
-.content i{
+.skill-card .content:hover{
+  background-color: #334257;
+  color: white;
+}
+
+.skill-card .content i{
   font-size: 42px;
 }
 

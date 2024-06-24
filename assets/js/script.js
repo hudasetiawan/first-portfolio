@@ -51,3 +51,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+// TypeWtriter
+document.addEventListener("DOMContentLoaded", () => {
+  const textElement = document.getElementById("passion");
+  const texts = ["Coding", "Problem Solving", "Teamwork", "UI/UX Designer"];
+  let currentIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let delay = 1000; // Initial delay before typing starts
+
+  function type() {
+    const currentText = texts[currentIndex];
+    if (isDeleting) {
+      textElement.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+      delay = 50; // Speed of deleting
+      if (charIndex === 0) {
+        isDeleting = false;
+        currentIndex = (currentIndex + 1) % texts.length;
+        delay = 1000; // Delay before typing the next text
+      }
+    } else {
+      textElement.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+      delay = 50; // Speed of typing
+      if (charIndex === currentText.length) {
+        isDeleting = true;
+        delay = 1500; // Delay before deleting
+      }
+    }
+
+    setTimeout(type, delay);
+  }
+
+  setTimeout(type, delay);
+});
