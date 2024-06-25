@@ -161,6 +161,7 @@ main {
   color: #0a748f;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(22, 199, 154, 0.8); 
+  position: relative;
 }
 
 #cv:hover {
@@ -168,6 +169,25 @@ main {
   color: #0486a7;
   transition: background-color 1s, color 1s;
   box-shadow: 0 0 20px rgb(33, 182, 145); 
+}
+
+.popup {
+  display: none; 
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+#cv:hover .popup {
+  display: block;
 }
 
 .img-profile {
@@ -310,7 +330,7 @@ main {
   grid-row: 2;
   grid-column: 3;
   flex-wrap: wrap; 
-  gap: 20px; 
+  gap: 40px; 
   justify-content: center;
 }
 
@@ -360,6 +380,28 @@ main {
 .project-card .title {
   font-size: 17px;
   color: #fff;
+}
+
+.project-card .repo-link {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #16c79a;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.project-card:hover .repo-link {
+  display: block;
+}
+
+.project-card .content:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 /* STYLE SKILLS */
