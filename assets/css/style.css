@@ -90,7 +90,7 @@ header .logo{
 
 main {
   width: 100%;
-  height: 100%;
+  height: fit-content;
 }
 
 /* STYLE HOME */
@@ -233,7 +233,7 @@ main {
   .about-container {
     background-color: #ececec;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
